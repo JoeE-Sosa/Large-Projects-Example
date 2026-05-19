@@ -1,0 +1,11 @@
+export enum USER_ROLES {
+  ADMIN = 'ADMIN',
+  MODERATOR = 'MODERATOR',
+  MEMBER = 'MEMBER',
+}
+
+export const USER_ROLES_LEVELS = {
+  [USER_ROLES.ADMIN]: 3,
+  [USER_ROLES.MODERATOR]: 2,
+  [USER_ROLES.MEMBER]: 1,
+}

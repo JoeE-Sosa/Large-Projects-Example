@@ -1,0 +1,13 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1779128310971,
+      "tag": "20260518181830_goofy_gertrude_yorkes",
+      "breakpoints": true
+    }
+  ]
+}
