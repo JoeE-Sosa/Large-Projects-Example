@@ -7,7 +7,7 @@ import { prismaDatabase } from './services/database/prisma/database.ts'
 
 async function main() {
   try {
-    // await apiExpress.connect()
+    await apiExpress.connect()
     // await apiFastify.connect()
     // await sequelizeDatabase.connect({ force: false })
     // await drizzleDatabase.connect()
@@ -15,7 +15,7 @@ async function main() {
   } catch (error) {
     console.log(error)
 
-    // await apiExpress.disconnect()
+    await apiExpress.disconnect()
     // await apiFastify.disconnect()
     // await sequelizeDatabase.disconnect()
     // await drizzleDatabase.disconect()
