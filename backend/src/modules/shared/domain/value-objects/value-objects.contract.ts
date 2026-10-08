@@ -1,4 +1,4 @@
-export abstract class ValueObjectContract<T> {
+export abstract class VOContact<T> {
   private readonly value: T
 
   constructor(value: T) {

@@ -1,8 +1,4 @@
 dist
 node_modules
 .env
-prod.bat
-todo.md
 /generated/prisma
-dev.bat
-Database Diagram.drawio

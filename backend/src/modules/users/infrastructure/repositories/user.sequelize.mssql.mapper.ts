@@ -1,15 +1,24 @@
-import { type Attributes } from 'sequelize'
-import type { UserModel } from '@/services/database/sequelize/definitions/user.definition.ts'
-import { User } from '../../domain/entities/user.entity.ts'
+import { InferAttributes } from 'sequelize'
+import { User } from '../../domain/user.entity.js'
+import type { UserModel } from '@/interfaces/database/sequelize/models/sequelize.user.model.js'
 
 export class UserSequelizeMSSQLMapper {
-  static toPersistence(user: User): Attributes<UserModel> {
-    const { guid, name, password, role, department, disabled, createdAt, updatedAt } = user.toPrimitive()
-    return { guid, name, password, role, department, disabled, createdAt, updatedAt }
+  static toPersistence(user: User): InferAttributes<UserModel> {
+    const { id, email, password, name, department, removed, disabled, creationDate, lastUpdate } = user.toPrimitive()
+    return {
+      id: id!,
+      email,
+      password,
+      name,
+      department,
+      removed: removed!,
+      disabled: disabled!,
+      creationDate: creationDate!,
+      lastUpdate: lastUpdate!,
+    }
   }
 
   static toDomain(user: UserModel): User {
-    const { guid, name, role, department, disabled, createdAt, updatedAt } = user
-    return User.build({ guid, name, role, department, disabled, createdAt, updatedAt })
+    return User.build(user)
   }
 }

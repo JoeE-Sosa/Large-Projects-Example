@@ -5,7 +5,7 @@ import {
   PositiveNoContentResponse,
   ResultErrorResponse,
   ServerErrorResponse,
-} from '@/services/server/fastify/fastify.responses.ts'
+} from '@/interfaces/server/fastify/fastify.responses'
 
 export class DisableUserController implements FastifyControllerContract {
   private readonly disableUserUseCase: DisableUserUseCase

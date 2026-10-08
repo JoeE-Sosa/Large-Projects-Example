@@ -1,6 +1,6 @@
 import type { FastifyInstance, FastifyPluginOptions } from 'fastify'
 import type { FastifyModuleContract } from '../shared/domain/contracts/fastify.module.contract.ts'
-import type { UserPersistence } from './domain/persistence/user.persistence.ts'
+import type { UserPersistence } from './domain/user.persistence.js'
 import { DisableUserUseCase } from './application/disable-user/disable-user.case.ts'
 import { DisableUserController } from './infrastructure/controllers/disable-user/disable-user.fastify.controller.ts'
 import { UserSequelizeMSSQLRepository } from './infrastructure/repositories/user.sequelize.mssql.repository.ts'

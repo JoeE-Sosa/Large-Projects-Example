@@ -1,6 +1,6 @@
 import z from 'zod'
 import type { NextFunction, Request, Response } from 'express'
-import { ValidationErrorResponse } from '@/services/server/express/express.responses.ts'
+import { ValidationErrorResponse } from '@/interfaces/server/express/express.responses'
 
 const disableUserSchema = z.object({
   query: z.object({

@@ -1,4 +1,4 @@
-import { USER_ROLES } from '@/constants/user-roles.ts'
+import { USER_ROLES } from '@/lib/constants/user-roles.ts'
 import type { SessionServiceContract } from '../../domain/contracts/session.service.contract.ts'
 import { Result } from '../../domain/patterns/result.pattern.ts'
 import type { AuthUserType } from '../../domain/types/auth.type.ts'

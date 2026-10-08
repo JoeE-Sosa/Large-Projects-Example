@@ -4,7 +4,7 @@ import {
   PositiveNoContentResponse,
   ResultErrorResponse,
   ServerErrorResponse,
-} from '@/services/server/express/express.responses.ts'
+} from '@/interfaces/server/express/express.responses'
 import type { Request, Response } from 'express'
 
 export class UpdateUserController implements ExpressControllerContract {

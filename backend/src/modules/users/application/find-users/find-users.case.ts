@@ -1,6 +1,6 @@
-import { Result } from '../../../shared/domain/patterns/result.pattern.ts'
-import type { User } from '../../domain/entities/user.entity.ts'
-import type { UserPersistence } from '../../domain/persistence/user.persistence.ts'
+import { Result } from '@/lib/patterns/Result.js'
+import type { User } from '../../domain/user.entity.js'
+import type { UserPersistence } from '../../domain/user.persistence.js'
 
 export class FindUsersUseCase {
   private readonly userPersistence: UserPersistence
@@ -11,14 +11,10 @@ export class FindUsersUseCase {
 
   async execute(): Promise<Result<User[]>> {
     try {
-      const getAllResult = await this.userPersistence.findAll()
-      if (!getAllResult.IsSuccess()) return Result.Fail(getAllResult.GetError())
-
-      const users = getAllResult.GetValue()
-
-      return Result.Ok(users)
+      const users = await this.userPersistence.findAll()
+      return Result.ok(users)
     } catch (error) {
-      return Result.Fail('An exception ocurred while trying to get all users.')
+      return Result.fail('An exception ocurred while trying to get all users.')
     }
   }
 }

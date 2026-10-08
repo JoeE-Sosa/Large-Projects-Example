@@ -1,5 +1,5 @@
 import { Result } from '../../../shared/domain/patterns/result.pattern.ts'
-import type { UserPersistence } from '../../domain/persistence/user.persistence.ts'
+import type { UserPersistence } from '../../domain/user.persistence.js'
 import type { UpdateUserDTO } from './update-user.dto.ts'
 
 export class UpdateUserUseCase {

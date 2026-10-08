@@ -1,4 +1,4 @@
-import type { USER_ROLES } from '@/constants/user-roles.ts'
+import type { USER_ROLES } from '@/lib/constants/user-roles'
 
 export type AuthUserType = {
   guid: string

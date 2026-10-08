@@ -1,5 +1,5 @@
 import type { Router } from 'express'
 
-export abstract class ExpressModuleContract {
-  abstract execute(): Router
+export interface ExpressModuleContract {
+  execute(): Router
 }

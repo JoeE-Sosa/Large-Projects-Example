@@ -1,4 +1,4 @@
-import { USER_ROLES, USER_ROLES_LEVELS } from '@/constants/user-roles.ts'
+import { USER_ROLES, USER_ROLES_LEVELS } from '@/lib/constants/user-roles'
 import { Result } from '@/modules/shared/domain/patterns/result.pattern.ts'
 import type { AuthEndpointDTO } from '@/modules/shared/application/auth-endpoint/auth-endpoint.dto.ts'
 

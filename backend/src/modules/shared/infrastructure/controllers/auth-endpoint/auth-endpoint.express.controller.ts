@@ -1,4 +1,4 @@
-import type { USER_ROLES } from '@/constants/user-roles.ts'
+import type { USER_ROLES } from '@/lib/constants/user-roles'
 import type { AuthEndpointUseCase } from '@/modules/shared/application/auth-endpoint/auth-endpoint.case.ts'
 import { Result } from '@/modules/shared/domain/patterns/result.pattern.ts'
 import type { NextFunction, Request, Response } from 'express'

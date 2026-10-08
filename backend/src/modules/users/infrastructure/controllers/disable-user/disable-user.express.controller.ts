@@ -1,6 +1,6 @@
 import type { ExpressControllerContract } from '@/modules/shared/domain/contracts/express.controller.contract.ts'
 import type { DisableUserUseCase } from '@/modules/users/application/disable-user/disable-user.case.ts'
-import { PositiveNoContentResponse, ServerErrorResponse } from '@/services/server/express/express.responses.ts'
+import { PositiveNoContentResponse, ServerErrorResponse } from '@/interfaces/server/express/express.responses'
 import type { Request, Response } from 'express'
 
 export class DisableUserController implements ExpressControllerContract {

@@ -5,7 +5,7 @@ import {
   PositiveCreatedResponse,
   ResultErrorResponse,
   ServerErrorResponse,
-} from '@/services/server/express/express.responses.ts'
+} from '@/interfaces/server/express/express.responses'
 
 export class CreateProductController implements ExpressControllerContract {
   private readonly createProductUseCase: CreateProductUseCase

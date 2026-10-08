@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-import { ValidationErrorResponse } from '@/services/server/express/express.responses.ts'
+import { ValidationErrorResponse } from '@/interfaces/server/express/express.responses'
 import type { NextFunction, Request, Response } from 'express'
 
 const CreateProductSchema = z.object({

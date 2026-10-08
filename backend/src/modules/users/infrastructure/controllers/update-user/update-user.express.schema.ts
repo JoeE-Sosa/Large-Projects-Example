@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { ValidationErrorResponse } from '@/services/server/express/express.responses.ts'
+import { ValidationErrorResponse } from '@/interfaces/server/express/express.responses'
 import type { Request, Response, NextFunction } from 'express'
 
 const updateUserSchema = z.object({

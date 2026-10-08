@@ -1,4 +1,4 @@
-import type { USER_ROLES } from '@/constants/user-roles.ts'
+import type { USER_ROLES } from '@/lib/constants/user-roles.ts'
 import { AuthEndpointUseCase } from './application/auth-endpoint/auth-endpoint.case.ts'
 import { AuthEndpointController } from './infrastructure/controllers/auth-endpoint/auth-endpoint.express.controller.ts'
 

@@ -1,36 +1,29 @@
-import type { EncryptServiceContract } from '@/modules/shared/domain/contracts/encrypt.service.contract.ts'
-import { Result } from '../../../shared/domain/patterns/result.pattern.ts'
-import { User } from '../../domain/entities/user.entity.ts'
-import type { UserPersistence } from '../../domain/persistence/user.persistence.ts'
-import { PasswordVO } from '../../domain/value-objects/password.vo.ts'
-import type { CreateUserDTO } from './create-user.dto.ts'
+import { EncryptService } from '@/modules/shared/domain/contracts/encrypt.service.contract'
+import { UserPersistence } from '../../domain/user.persistence'
+import { CreateUserDTO } from './create-user.dto'
+import { Result } from '@/lib/patterns/Result'
+import { User } from '../../domain/user.entity'
 
 export class CreateUserUseCase {
   private readonly userPersistence: UserPersistence
-  private readonly encryptService: EncryptServiceContract
+  private readonly encryptService: EncryptService
 
-  constructor(userPersistence: UserPersistence, encryptService: EncryptServiceContract) {
+  constructor(userPersistence: UserPersistence, encryptService: EncryptService) {
     this.userPersistence = userPersistence
     this.encryptService = encryptService
   }
 
   async execute(data: CreateUserDTO): Promise<Result<void>> {
     try {
-      const { name, password, role, department } = data
+      const { email, password, name, department } = data
 
-      const passwordResult = await PasswordVO.create(password, this.encryptService)
-      if (!passwordResult.IsSuccess()) return Result.Fail(passwordResult.GetError())
+      const hashedPassword = await this.encryptService.hash(password)
+      const user = User.create({ email, password: hashedPassword, name, department })
+      await this.userPersistence.create(user)
 
-      const passwordVO = passwordResult.GetValue()
-
-      const user = User.create({ name, password: passwordVO, role, department })
-
-      const createdResult = await this.userPersistence.create(user)
-      if (!createdResult.IsSuccess()) return Result.Fail(createdResult.GetError())
-
-      return Result.Ok(null)
+      return Result.ok(null)
     } catch (error) {
-      return Result.Fail('An exception ocurred while trying to create an user.')
+      return Result.fail('An exception ocurred while trying to create an user.')
     }
   }
 }

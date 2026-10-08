@@ -1,6 +1,6 @@
 import { Router } from 'express'
 
-import { USER_ROLES } from '@/constants/user-roles.ts'
+import { USER_ROLES } from '@/lib/constants/user-roles.ts'
 
 import type { ExpressModuleContract } from '../shared/domain/contracts/express.module.contract.ts'
 import type { ProductPersistence } from './domain/persistence/product.persistence.ts'

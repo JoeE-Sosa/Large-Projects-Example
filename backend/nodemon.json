@@ -2,9 +2,12 @@
   "watch": [
     "src"
   ],
-  "ext": "ts, js, json",
+  "ext": "ts,js,json",
   "ignore": [
-    "node_modules"
+    "src/**/*.spec.ts",
+    "node_modules",
+    "dist",
+    "storage"
   ],
   "exec": "tsx --env-file=.env src/index.ts"
 }

@@ -1,4 +1,4 @@
-import { ValidationErrorResponse } from '@/services/server/fastify/fastify.responses.ts'
+import { ValidationErrorResponse } from '@/interfaces/server/fastify/fastify.responses'
 import type { FastifyReply, FastifyRequest, preHandlerHookHandler } from 'fastify'
 import z from 'zod'
 
